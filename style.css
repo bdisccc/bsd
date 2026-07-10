@@ -687,9 +687,10 @@ a.scroll-down {
 }
 
 .contact-links a{
-    display:flex;
+    display:grid;
+    grid-template-columns:48px 1fr 42px;
     align-items:center;
-    gap:18px;
+    gap:16px;
 
     padding:18px;
     border-radius:16px;
@@ -702,7 +703,8 @@ a.scroll-down {
 
     transition:.3s;
 
-    min-width:0;
+    width:100%;
+    overflow:hidden;
 }
 
 .contact-links a:hover{
@@ -754,14 +756,26 @@ a.scroll-down {
 }
 
 .contact-links div{
-    flex:1;
+    width:100%;
     min-width:0;
 }
 
 .contact-links span{
     display:block;
+    color:#bdbdbd;
+    font-size:.82rem;
+    line-height:1.35;
+
     overflow-wrap:anywhere;
     word-break:break-word;
+}
+
+.contact-section{
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x:hidden;
 }
 
 .copy-email-btn{
