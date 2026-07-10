@@ -148,3 +148,59 @@ setTimeout(() => {
     }
   });
 }
+
+function getDeviceType() {
+  return window.innerWidth <= 768 ? "Mobile" : "Desktop";
+}
+
+function getBrowser() {
+  const userAgent = navigator.userAgent;
+
+  if (userAgent.includes("Edg")) return "Edge";
+  if (userAgent.includes("Chrome")) return "Chrome";
+  if (userAgent.includes("Safari")) return "Safari";
+  if (userAgent.includes("Firefox")) return "Firefox";
+
+  return "Unknown";
+}
+
+function getOS() {
+  const userAgent = navigator.userAgent;
+
+  if (userAgent.includes("Windows")) return "Windows";
+  if (userAgent.includes("Mac")) return "MacOS";
+  if (userAgent.includes("Android")) return "Android";
+  if (userAgent.includes("iPhone") || userAgent.includes("iPad")) return "iOS";
+
+  return "Unknown";
+}
+
+async function trackPortfolioView() {
+  const today = new Date().toISOString().split("T")[0];
+  const lastTrackedDate = localStorage.getItem("portfolioViewDate");
+
+  if (lastTrackedDate === today) return;
+
+  const viewData = {
+    type: "view",
+    page: "Portfolio",
+    device: getDeviceType(),
+    browser: getBrowser(),
+    os: getOS(),
+    screenWidth: window.innerWidth
+  };
+
+  try {
+    await fetch(API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(viewData)
+    });
+
+    localStorage.setItem("portfolioViewDate", today);
+  } catch (error) {
+    console.error("View tracking failed:", error);
+  }
+}
+
+trackPortfolioView();
