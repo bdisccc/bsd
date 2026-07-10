@@ -626,6 +626,16 @@ a.scroll-down {
     grid-column: 2;
     align-self: center;
   }
+
+  .contact-links a{
+    padding:16px;
+}
+
+.contact-info,
+.contact-form{
+    width:100%;
+    max-width:100%;
+}
 }
 .challenge-left{
     display:flex;
@@ -691,6 +701,8 @@ a.scroll-down {
     border:1px solid rgba(255,255,255,.08);
 
     transition:.3s;
+
+    min-width:0;
 }
 
 .contact-links a:hover{
@@ -739,6 +751,21 @@ a.scroll-down {
     color:#bdbdbd;
 
     font-size:.9rem;
+}
+
+.contact-links div{
+    flex:1;
+    min-width:0;
+}
+
+.contact-links span{
+    display:block;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+
+.copy-email-btn{
+    flex-shrink:0;
 }
 
 .contact-form{
