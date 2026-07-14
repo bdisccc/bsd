@@ -1581,4 +1581,46 @@ footer {
   }
 }
 
+/* Fix mobile flip-card ghosting / mirrored front overlap */
+.neon-card-inner {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.neon-card-front {
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
+}
+
+.neon-card-back {
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+}
+
+.neon-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+/* Hide the inactive side so it cannot ghost through on mobile */
+.neon-project-card:not(.is-flipped) .neon-card-back {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.neon-project-card.is-flipped .neon-card-front {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.neon-project-card.is-flipped .neon-card-back {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 
