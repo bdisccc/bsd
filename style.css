@@ -1162,3 +1162,423 @@ footer {
     position: static;
   }
 }
+
+/* ===========================
+   Neon Flip Project Cards
+=========================== */
+
+.project-neon-grid {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.neon-project-card {
+  --neon: #d96b6b;
+  --neon-soft: rgba(217, 107, 107, 0.45);
+
+  min-height: 390px;
+  border-radius: 30px;
+  perspective: 1200px;
+  outline: none;
+}
+
+.neon-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.neon-project-card.is-flipped .neon-card-inner {
+  transform: rotateY(180deg);
+}
+
+.neon-card-face {
+  position: absolute;
+  inset: 0;
+  padding: 30px;
+  border-radius: 30px;
+  border: 1px solid color-mix(in srgb, var(--neon) 58%, transparent);
+  background:
+    radial-gradient(circle at 12% 10%, color-mix(in srgb, var(--neon) 28%, transparent), transparent 24%),
+    linear-gradient(180deg, #08080d 0%, #090909 58%, color-mix(in srgb, var(--neon) 42%, #050505) 140%);
+  box-shadow:
+    inset 0 -70px 90px color-mix(in srgb, var(--neon) 42%, transparent),
+    0 24px 70px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.neon-card-face::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -28px;
+  height: 110px;
+  background: var(--neon);
+  filter: blur(45px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.neon-card-front,
+.neon-card-back {
+  display: flex;
+  flex-direction: column;
+}
+
+.neon-card-front {
+  justify-content: space-between;
+}
+
+.neon-card-back {
+  transform: rotateY(180deg);
+  gap: 18px;
+}
+
+.neon-project-card .day-badge {
+  width: fit-content;
+  min-width: auto;
+  padding: 9px 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid color-mix(in srgb, var(--neon) 75%, transparent);
+  color: #ffffff;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--neon) 45%, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+.neon-project-card h3 {
+  color: #ffffff;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.12;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.neon-project-card p {
+  color: #cfcfcf;
+  line-height: 1.65;
+  font-size: 0.96rem;
+  position: relative;
+  z-index: 1;
+}
+
+.learn-more-btn,
+.flip-back-btn {
+  width: fit-content;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: 0.25s ease;
+}
+
+.learn-more-btn {
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.learn-more-btn span {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.25s ease;
+}
+
+.learn-more-btn:hover span {
+  transform: translateX(5px);
+}
+
+.flip-back-btn {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--neon) 60%, transparent);
+}
+
+.flip-back-btn:hover {
+  background: var(--neon);
+  color: #050505;
+}
+
+.neon-card-back .project-tech {
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.neon-card-back .project-tech span {
+  font-size: 0.78rem;
+  padding: 7px 11px;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: color-mix(in srgb, var(--neon) 55%, transparent);
+}
+
+.neon-card-back .project-buttons {
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.neon-card-back .demo-btn {
+  background: var(--neon);
+  color: #050505;
+}
+
+.neon-card-back .demo-btn:hover {
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--neon) 55%, transparent);
+}
+
+.neon-blue {
+  --neon: #3b82f6;
+}
+
+.neon-orange {
+  --neon: #ff7043;
+}
+
+.neon-purple {
+  --neon: #a855f7;
+}
+
+.neon-pink {
+  --neon: #e879f9;
+}
+
+.neon-green {
+  --neon: #22c55e;
+}
+
+.neon-cyan {
+  --neon: #22d3ee;
+}
+
+@media (hover: hover) {
+  .neon-project-card:hover .neon-card-inner {
+    transform: translateY(-8px);
+  }
+
+  .neon-project-card.is-flipped:hover .neon-card-inner {
+    transform: rotateY(180deg) translateY(-8px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .project-neon-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .project-neon-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(270px, 86vw);
+    grid-template-columns: none;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 6px 4px 18px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .project-neon-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .neon-project-card {
+    scroll-snap-align: center;
+    min-height: 410px;
+  }
+
+  .neon-card-inner {
+    min-height: 410px;
+  }
+
+  .neon-card-face {
+    padding: 26px;
+  }
+
+  .neon-project-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .neon-project-card p {
+    font-size: 0.9rem;
+  }
+}
+/* Smooth mobile project swiping */
+@media (max-width: 700px) {
+  .project-neon-grid {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    padding: 8px 18px 24px;
+  }
+
+  .neon-project-card {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    touch-action: pan-x;
+  }
+
+  .neon-card-inner,
+  .neon-card-face {
+    touch-action: pan-x;
+  }
+}
+
+/* Fix project neon card content getting cut on smaller screens */
+@media (max-width: 700px) {
+  .neon-project-card {
+    min-height: 540px;
+  }
+
+  .neon-card-inner {
+    min-height: 540px;
+  }
+
+  .neon-card-face {
+    padding: 24px;
+  }
+
+  .neon-card-back {
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .neon-card-back::-webkit-scrollbar {
+    display: none;
+  }
+
+  .neon-card-back p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .neon-card-back .project-tech {
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .neon-card-back .project-tech span {
+    font-size: 0.72rem;
+    padding: 6px 9px;
+  }
+
+  .neon-card-back .project-buttons {
+    margin-top: 6px;
+  }
+
+  .neon-card-back .project-buttons a,
+  .neon-card-back .project-buttons button {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .neon-project-card {
+    min-height: 580px;
+  }
+
+  .neon-card-inner {
+    min-height: 580px;
+  }
+}
+
+/* Fix neon project card content on all screen sizes */
+.neon-project-card {
+  min-height: 540px;
+}
+
+.neon-card-inner {
+  min-height: 540px;
+}
+
+.neon-card-face {
+  min-height: 540px;
+}
+
+.neon-card-back {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.neon-card-back::-webkit-scrollbar {
+  display: none;
+}
+
+.neon-card-back p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.neon-card-back .project-tech {
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.neon-card-back .project-tech span {
+  font-size: 0.76rem;
+  padding: 6px 10px;
+}
+
+.neon-card-back .project-buttons {
+  margin-top: 8px;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .neon-project-card,
+  .neon-card-inner,
+  .neon-card-face {
+    min-height: 560px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .neon-project-card,
+  .neon-card-inner,
+  .neon-card-face {
+    min-height: 590px;
+  }
+
+  .neon-card-face {
+    padding: 24px;
+  }
+
+  .neon-card-back p {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .neon-card-back .project-tech span {
+    font-size: 0.72rem;
+    padding: 6px 9px;
+  }
+
+  .neon-card-back .project-buttons a,
+  .neon-card-back .project-buttons button {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+}
+
+

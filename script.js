@@ -204,3 +204,42 @@ async function trackPortfolioView() {
 }
 
 trackPortfolioView();
+
+const neonProjectCards = document.querySelectorAll(".neon-project-card");
+
+neonProjectCards.forEach((card) => {
+  const learnMoreBtn = card.querySelector(".learn-more-btn");
+  const backBtn = card.querySelector(".flip-back-btn");
+
+  function showBack() {
+    card.classList.add("is-flipped");
+  }
+
+  function showFront() {
+    card.classList.remove("is-flipped");
+  }
+
+  if (learnMoreBtn) {
+    learnMoreBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      showBack();
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      showFront();
+    });
+  }
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      card.classList.toggle("is-flipped");
+    }
+  });
+});
+
