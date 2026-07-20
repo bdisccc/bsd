@@ -1623,4 +1623,8 @@ footer {
   pointer-events: auto;
 }
 
+.neon-red {
+  --neon: #ef4444;
+}
+
 
