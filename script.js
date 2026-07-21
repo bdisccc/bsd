@@ -16,23 +16,24 @@ function typeRoles() {
   if (!typingRole) return;
 
   const currentRole = roles[roleIndex];
-  typingRole.textContent = currentRole.substring(0, charIndex);
 
-  if (!isDeleting && charIndex < currentRole.length) {
+  if (!isDeleting) {
     charIndex += 1;
-  } else if (isDeleting && charIndex > 0) {
+    typingRole.textContent = currentRole.substring(0, charIndex);
+
+    if (charIndex === currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeRoles, 1200);
+      return;
+    }
+  } else {
     charIndex -= 1;
-  }
+    typingRole.textContent = currentRole.substring(0, charIndex);
 
-  if (!isDeleting && charIndex === currentRole.length) {
-    isDeleting = true;
-    setTimeout(typeRoles, 1200);
-    return;
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
+    if (charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
   }
 
   setTimeout(typeRoles, isDeleting ? 55 : 90);

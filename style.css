@@ -1905,3 +1905,91 @@ html[data-theme="light"] .hand-swipe-cue svg {
 html[data-theme="light"] .hand-swipe-cue .swipe-track {
   background: rgba(201, 83, 83, 0.28);
 }
+
+@media (max-width: 768px) {
+  .hero h2 {
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    line-height: 1.25;
+    overflow: visible;
+  }
+
+  #typing-role {
+    display: inline;
+    white-space: normal;
+  }
+}
+
+/* ===========================
+   Project Card Shine Animation
+=========================== */
+
+.neon-card-face::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -90%;
+  z-index: 1;
+
+  width: 55%;
+  height: 180%;
+
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 35%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.05) 65%,
+    transparent 100%
+  );
+
+  transform: rotate(12deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Shine on hover for desktop */
+.neon-project-card:hover .neon-card-face::before {
+  animation: projectCardShine 1.15s ease forwards;
+}
+
+/* Subtle automatic shine for mobile */
+@media (max-width: 768px) {
+  .neon-card-face::before {
+    animation: projectCardShineMobile 4.5s ease-in-out infinite;
+  }
+}
+
+@keyframes projectCardShine {
+  0% {
+    left: -90%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+}
+
+@keyframes projectCardShineMobile {
+  0%,
+  62% {
+    left: -90%;
+    opacity: 0;
+  }
+
+  72% {
+    opacity: 0.85;
+  }
+
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+}
