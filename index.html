@@ -1,29 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bon Discaya | Portfolio</title>
 
     <link rel="icon" type="image/png" href="assets/me.png" />
-
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
-    />
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
 
   <body>
     <header class="navbar">
-      <div class="logo">Bon</div>
+      <a href="#home" class="logo">Bon</a>
 
-      <nav class="nav-links">
-        <a href="#home" class="active">Home</a>
-        <a href="#skills">Skills & Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#home" class="active">Home</a>
+          <a href="#skills">Skills & Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button type="button" class="theme-toggle" aria-label="Switch theme">
+          <i class="hgi hgi-stroke hgi-rounded hgi-moon-02"></i>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -35,8 +38,8 @@
         </div>
 
         <div class="hero-content">
+          <p class="eyebrow">Portfolio Website</p>
           <h1>Hi, It's <span>Bon</span></h1>
-
           <h2>I'm a <span id="typing-role"></span></h2>
 
           <p class="hero-text">
@@ -46,54 +49,310 @@
           </p>
 
           <div class="social-icons">
-            <a
-              href="https://github.com/bdisccc"
-              target="_blank"
-              aria-label="GitHub"
-            >
+            <a href="https://github.com/bdisccc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i class="hgi hgi-stroke hgi-rounded hgi-github"></i>
             </a>
-
-            <a
-              href="https://www.linkedin.com/in/bon-s-93529b141/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/in/bon-s-93529b141/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i class="hgi hgi-stroke hgi-rounded hgi-linkedin-01"></i>
             </a>
-
             <a href="mailto:bonsuarez.discaya@gmail.com" aria-label="Email">
               <i class="hgi hgi-stroke hgi-rounded hgi-mail-01"></i>
             </a>
           </div>
 
-          <a href="#contact" class="hire-btn">Hire me</a>
+          <div class="hero-buttons">
+            <a href="#contact" class="hire-btn">Hire me</a>
+            <a href="#projects" class="secondary-btn">View projects</a>
+          </div>
         </div>
 
-        <a href="#skills" class="scroll-down">
-          <span></span>
-        </a>
+        <a href="#skills" class="scroll-down" aria-label="Scroll to skills"><span></span></a>
       </section>
 
       <section id="skills" class="section journey-section">
         <div class="section-heading">
-          <p class="section-subtitle">Professional Journey</p>
+          <p class="section-subtitle">Portfolio-Friendly Skills</p>
           <h2>Skills & Experience</h2>
-
           <p class="journey-description">
-            Technical Project Manager and Business Analyst with over 4 years of
-            experience delivering enterprise software, digital transformation,
-            healthcare, fintech, utilities, retail, and nonprofit projects.
-            Passionate about bridging business objectives with technical
-            execution while continuously improving software quality and
-            delivery.
+            A curated mix of development, web design, automation, project delivery,
+            business operations, and professional execution skills without repeating the same tools.
           </p>
         </div>
 
-        <div class="journey-content">
+        <div class="skills-layout">
+          <div class="skills-ticker-stage" aria-hidden="true">
+            <div class="angled-ticker ticker-dev">
+              <div class="ticker-track">
+                <span>DEV TOOLS • JAVASCRIPT • REACT • NODE.JS • EXPRESS.JS • POSTGRESQL • PRISMA • VITE • APPS SCRIPT • GITHUB •</span>
+                <span>DEV TOOLS • JAVASCRIPT • REACT • NODE.JS • EXPRESS.JS • POSTGRESQL • PRISMA • VITE • APPS SCRIPT • GITHUB •</span>
+              </div>
+            </div>
+
+            <div class="angled-ticker ticker-design">
+              <div class="ticker-track ticker-track-reverse">
+                <span>DESIGN & NO-CODE • WEBFLOW • SHOPIFY • FRAMER • FIGMA • LANDING PAGES • UI MOCKUPS • PROTOTYPES •</span>
+                <span>DESIGN & NO-CODE • WEBFLOW • SHOPIFY • FRAMER • FIGMA • LANDING PAGES • UI MOCKUPS • PROTOTYPES •</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="web-toolkit-card" aria-label="Web development toolkit">
+            <div class="web-toolkit-heading">
+              <p class="service-kicker">Web Development Toolkit</p>
+              <h3>Development, Design & No-Code Tools</h3>
+              <p>
+                I grouped the coding stack and website-building tools together because
+                they work best as one web delivery toolkit: build the interface, connect
+                the logic, shape the design, and prepare it for launch.
+              </p>
+            </div>
+
+            <div class="tool-row-block">
+              <div class="tool-row-header">
+                <h4>Development Stack</h4>
+                <p>Frontend, backend, databases, APIs, and deployment-ready tooling.</p>
+              </div>
+
+              <div class="logo-skill-row" aria-label="Software Development tools">
+                <div class="logo-skill" title="JavaScript" style="--delay: 0s">
+                  <iconify-icon icon="logos:javascript"></iconify-icon>
+                  <span>JavaScript</span>
+                </div>
+                <div class="logo-skill" title="React" style="--delay: 0.04s">
+                  <iconify-icon icon="logos:react"></iconify-icon>
+                  <span>React</span>
+                </div>
+                <div class="logo-skill" title="Node.js" style="--delay: 0.08s">
+                  <iconify-icon icon="logos:nodejs-icon"></iconify-icon>
+                  <span>Node.js</span>
+                </div>
+                <div class="logo-skill" title="Express.js" style="--delay: 0.12s">
+                  <iconify-icon icon="simple-icons:express"></iconify-icon>
+                  <span>Express.js</span>
+                </div>
+                <div class="logo-skill" title="HTML" style="--delay: 0.16s">
+                  <iconify-icon icon="logos:html-5"></iconify-icon>
+                  <span>HTML</span>
+                </div>
+                <div class="logo-skill" title="CSS" style="--delay: 0.2s">
+                  <iconify-icon icon="logos:css-3"></iconify-icon>
+                  <span>CSS</span>
+                </div>
+                <div class="logo-skill" title="PostgreSQL" style="--delay: 0.24s">
+                  <iconify-icon icon="logos:postgresql"></iconify-icon>
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="logo-skill" title="Prisma" style="--delay: 0.28s">
+                  <iconify-icon icon="simple-icons:prisma"></iconify-icon>
+                  <span>Prisma</span>
+                </div>
+                <div class="logo-skill" title="Vite" style="--delay: 0.32s">
+                  <iconify-icon icon="logos:vitejs"></iconify-icon>
+                  <span>Vite</span>
+                </div>
+                <div class="logo-skill" title="Google Apps Script" style="--delay: 0.36s">
+                  <iconify-icon icon="simple-icons:googleappsscript"></iconify-icon>
+                  <span>Apps Script</span>
+                </div>
+                <div class="logo-skill" title="GitHub" style="--delay: 0.4s">
+                  <iconify-icon icon="simple-icons:github"></iconify-icon>
+                  <span>GitHub</span>
+                </div>
+              </div>
+
+              <div class="swipe-cue hand-swipe-cue" aria-hidden="true">
+                <span class="swipe-track"></span>
+
+                <svg viewBox="0 0 120 120" role="img">
+                  <path
+                    d="M48 68V22C48 15.8 52.5 11 58 11C63.5 11 68 15.8 68 22V50"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M68 52C70.2 48.7 74.2 47.2 78 48.8C81.3 50.2 83 53 83 57"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M83 58C85.2 54.9 89 53.9 92.3 55.4C95.4 56.8 97 59.5 97 63.3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M97 65C99.2 62.5 103 62.2 105.7 64.3C108.1 66.1 109 68.8 108.6 72.4L106.8 88.4C105.6 99.3 96.2 108 85.2 108H58.8C48.7 108 39.6 102.2 35.2 93.1L27.5 77.2C24.9 71.8 27.2 65.4 32.5 62.8C36.9 60.7 42.1 61.9 45.2 65.6L53 75"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="tool-row-block">
+              <div class="tool-row-header">
+                <h4>Design & No-Code Stack</h4>
+                <p>Website builders, storefront tools, prototyping, and visual design systems.</p>
+              </div>
+
+              <div class="logo-skill-row design-logo-row" aria-label="Web Design and No-Code tools">
+                <div class="logo-skill" title="Webflow" style="--delay: 0s">
+                  <iconify-icon icon="simple-icons:webflow"></iconify-icon>
+                  <span>Webflow</span>
+                </div>
+                <div class="logo-skill" title="Shopify" style="--delay: 0.04s">
+                  <iconify-icon icon="logos:shopify"></iconify-icon>
+                  <span>Shopify</span>
+                </div>
+                <div class="logo-skill" title="Framer" style="--delay: 0.08s">
+                  <iconify-icon icon="simple-icons:framer"></iconify-icon>
+                  <span>Framer</span>
+                </div>
+                <div class="logo-skill" title="Figma" style="--delay: 0.12s">
+                  <iconify-icon icon="logos:figma"></iconify-icon>
+                  <span>Figma</span>
+                </div>
+              </div>
+
+              <div class="swipe-cue hand-swipe-cue" aria-hidden="true">
+                <span class="swipe-track"></span>
+
+                <svg viewBox="0 0 120 120" role="img">
+                  <path
+                    d="M48 68V22C48 15.8 52.5 11 58 11C63.5 11 68 15.8 68 22V50"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M68 52C70.2 48.7 74.2 47.2 78 48.8C81.3 50.2 83 53 83 57"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M83 58C85.2 54.9 89 53.9 92.3 55.4C95.4 56.8 97 59.5 97 63.3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M97 65C99.2 62.5 103 62.2 105.7 64.3C108.1 66.1 109 68.8 108.6 72.4L106.8 88.4C105.6 99.3 96.2 108 85.2 108H58.8C48.7 108 39.6 102.2 35.2 93.1L27.5 77.2C24.9 71.8 27.2 65.4 32.5 62.8C36.9 60.7 42.1 61.9 45.2 65.6L53 75"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </section>
+
+          <div class="skill-service-grid" aria-label="Professional skill groups">
+            <article class="skill-service-card" style="--delay: 0s">
+              <p class="service-kicker">AI & Automation</p>
+              <h3>Workflow Automation Support</h3>
+              <p class="service-description">
+                AI-assisted planning, prompt design, automation mapping, and workflow improvements for teams that want to move faster.
+              </p>
+              <ul class="service-checklist">
+                <li>ChatGPT, Claude, and Codex workflows</li>
+                <li>Prompt engineering and reusable prompt systems</li>
+                <li>n8n workflow planning and automation logic</li>
+                <li>Manual processes turned into repeatable systems</li>
+              </ul>
+              <a href="#contact" class="service-hire-btn"><span>Hire me</span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-02"></i></a>
+            </article>
+
+            <article class="skill-service-card" style="--delay: 0.08s">
+              <p class="service-kicker">Project Management</p>
+              <h3>Delivery & Coordination</h3>
+              <p class="service-description">
+                Project coordination and delivery support for clearer timelines, follow-ups, documentation, and stakeholder alignment.
+              </p>
+              <ul class="service-checklist">
+                <li>Jira, ClickUp, Linear, Notion, and Slack</li>
+                <li>RAID logs, action logs, reminders, and reports</li>
+                <li>Agile delivery and sprint coordination</li>
+                <li>Stakeholder updates and project ownership</li>
+              </ul>
+              <a href="#contact" class="service-hire-btn"><span>Hire me</span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-02"></i></a>
+            </article>
+
+            <article class="skill-service-card" style="--delay: 0.16s">
+              <p class="service-kicker">Creative Tools</p>
+              <h3>Content & Visual Support</h3>
+              <p class="service-description">
+                Practical visual support for pitch decks, website graphics, social content, short videos, mockups, and brand assets.
+              </p>
+              <ul class="service-checklist">
+                <li>Adobe Photoshop for image edits and graphics</li>
+                <li>Adobe Premiere Pro for video editing</li>
+                <li>Canva layouts for quick marketing assets</li>
+                <li>Visual polish for web and portfolio content</li>
+              </ul>
+              <a href="#contact" class="service-hire-btn"><span>Hire me</span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-02"></i></a>
+            </article>
+
+            <article class="skill-service-card" style="--delay: 0.24s">
+              <p class="service-kicker">Business Productivity</p>
+              <h3>Operations Support</h3>
+              <p class="service-description">
+                Business productivity support for documentation, spreadsheets, collaboration, financial tracking, and organized team workflows.
+              </p>
+              <ul class="service-checklist">
+                <li>Microsoft 365 and Google Workspace</li>
+                <li>Spreadsheet trackers, forms, and dashboards</li>
+                <li>Xero-aware admin and finance workflows</li>
+                <li>Process documentation and team handover files</li>
+              </ul>
+              <a href="#contact" class="service-hire-btn"><span>Hire me</span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-02"></i></a>
+            </article>
+
+            <article class="skill-service-card" style="--delay: 0.32s">
+              <p class="service-kicker">Professional Skills</p>
+              <h3>Team & Execution Habits</h3>
+              <p class="service-description">
+                Reliable execution habits that help projects move forward smoothly when requirements, timelines, or priorities change.
+              </p>
+              <ul class="service-checklist">
+                <li>Communication and stakeholder follow-through</li>
+                <li>Problem solving and adaptability</li>
+                <li>Teamwork, ownership, and accountability</li>
+                <li>Attention to detail in documentation and QA</li>
+              </ul>
+              <a href="#contact" class="service-hire-btn"><span>Hire me</span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-02"></i></a>
+            </article>
+          </div>
+        </div>
+
+        <div class="experience-block">
+          <div class="subsection-heading">
+            <p class="section-subtitle">Experience</p>
+            <h3>Roles I have handled</h3>
+          </div>
+
           <div class="experience-column">
             <div class="experience-card">
-              <button class="experience-header">
+              <button class="experience-header" type="button">
                 <div>
                   <p class="experience-date">March 2026 – Present</p>
                   <h3>Project Coordinator</h3>
@@ -101,40 +360,22 @@
                 </div>
                 <strong>+</strong>
               </button>
-
               <div class="experience-details">
                 <p>
-                  Coordinate enterprise software implementation projects for a
-                  leading energy company, ensuring alignment between clients,
-                  vendors, and internal delivery teams.
+                  Coordinate enterprise software implementation projects for a leading energy company,
+                  ensuring alignment between clients, vendors, and internal delivery teams.
                 </p>
-
                 <ul>
-                  <li>
-                    Coordinate project schedules, milestones, and stakeholder
-                    meetings.
-                  </li>
-                  <li>
-                    Monitor project progress and manage risks and dependencies.
-                  </li>
-                  <li>
-                    Track action items and ensure timely completion of
-                    deliverables.
-                  </li>
-                  <li>
-                    Collaborate with architects, developers, vendors, and
-                    business stakeholders.
-                  </li>
-                  <li>
-                    Prepare project reports, status updates, and delivery
-                    documentation.
-                  </li>
+                  <li>Coordinate project schedules, milestones, stakeholder meetings, and delivery updates.</li>
+                  <li>Monitor progress, risks, dependencies, RAID logs, and action items.</li>
+                  <li>Collaborate with architects, developers, vendors, and business stakeholders.</li>
+                  <li>Prepare project reports, status updates, and delivery documentation.</li>
                 </ul>
               </div>
             </div>
 
             <div class="experience-card">
-              <button class="experience-header">
+              <button class="experience-header" type="button">
                 <div>
                   <p class="experience-date">September 2024 – March 2026</p>
                   <h3>Business Analyst</h3>
@@ -142,34 +383,22 @@
                 </div>
                 <strong>+</strong>
               </button>
-
               <div class="experience-details">
                 <p>
-                  Supported ISO 9001:2015 process improvement initiatives for a
-                  leading utilities company by standardizing documentation and
-                  improving operational processes.
+                  Supported ISO 9001:2015 process improvement initiatives by standardizing
+                  documentation and improving operational tracking.
                 </p>
-
                 <ul>
-                  <li>
-                    Standardized operational documentation aligned with ISO
-                    9001:2015.
-                  </li>
-                  <li>
-                    Improved documentation tracking and reporting processes.
-                  </li>
-                  <li>
-                    Facilitated collaboration across multiple operational teams.
-                  </li>
-                  <li>
-                    Supported onboarding and knowledge transfer initiatives.
-                  </li>
+                  <li>Standardized operational documentation aligned with ISO 9001:2015.</li>
+                  <li>Improved documentation tracking and reporting processes.</li>
+                  <li>Facilitated collaboration across multiple operational teams.</li>
+                  <li>Supported onboarding and knowledge transfer initiatives.</li>
                 </ul>
               </div>
             </div>
 
             <div class="experience-card">
-              <button class="experience-header">
+              <button class="experience-header" type="button">
                 <div>
                   <p class="experience-date">March 2026 – Present</p>
                   <h3>Project Manager</h3>
@@ -177,604 +406,241 @@
                 </div>
                 <strong>+</strong>
               </button>
-
               <div class="experience-details">
                 <p>
                   Managed website, e-commerce, fintech, transportation, retail,
-                  manufacturing, nonprofit, and platform development projects
-                  across multiple client industries.
+                  manufacturing, nonprofit, and platform development projects.
                 </p>
-
                 <ul>
-                  <li>Managed website and e-commerce projects.</li>
-                  <li>
-                    Led UI/UX improvements, project planning, client management,
-                    and QA testing.
-                  </li>
-                  <li>
-                    Coordinated developers, designers, QA engineers, and
-                    stakeholders.
-                  </li>
-                  <li>
-                    Supported successful website, CMS, and application launches.
-                  </li>
+                  <li>Managed website, CMS, and e-commerce projects.</li>
+                  <li>Led UI/UX improvements, project planning, client management, and QA testing.</li>
+                  <li>Coordinated developers, designers, QA engineers, and stakeholders.</li>
+                  <li>Supported successful launches, handovers, and client reviews.</li>
                 </ul>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="skills-column">
-            <div class="skill-category">
-              <h3>Project Management</h3>
-              <div class="skill-list">
-                <span>Jira</span>
-                <span>ClickUp</span>
-                <span>Smartsheet</span>
-                <span>Notion</span>
-                <span>Slack</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3>Business & QA</h3>
-              <div class="skill-list">
-                <span>Business Analysis</span>
-                <span>Requirements Gathering</span>
-                <span>SDLC</span>
-                <span>Agile & Scrum</span>
-                <span>Manual QA</span>
-                <span>UAT</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3>Development</h3>
-              <div class="skill-list">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Node.js</span>
-                <span>App Script</span>
-                <span>Git</span>
-                <span>GitHub</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3>AI & Design Tools</h3>
-              <div class="skill-list">
-                <span>ChatGPT</span>
-                <span>Codex</span>
-                <span>Copilot</span>
-                <span>Claude</span>
-                <span>Figma</span>
-                <span>Photoshop</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="achievement-card">
-            <h3>Career Highlights</h3>
-
-            <div class="achievement-list">
-              <div class="achievement-item">
-                <span>🏆</span>
-                <p>
-                  Delivered digital transformation projects across healthcare,
-                  fintech, utilities, transportation, retail, and nonprofit
-                  industries.
-                </p>
-              </div>
-
-              <div class="achievement-item">
-                <span>👥</span>
-                <p>
-                  Coordinated cross-functional teams consisting of developers,
-                  designers, QA engineers, and business stakeholders.
-                </p>
-              </div>
-
-              <div class="achievement-item">
-                <span>✅</span>
-                <p>
-                  Led Manual QA and User Acceptance Testing (UAT) activities for
-                  multiple production systems.
-                </p>
-              </div>
-
-              <div class="achievement-item">
-                <span>📈</span>
-                <p>
-                  Managed client communication throughout the full Software
-                  Development Lifecycle.
-                </p>
-              </div>
-
-              <div class="achievement-item">
-                <span>⚙️</span>
-                <p>
-                  Supported enterprise implementation and ISO 9001:2015 process
-                  improvement initiatives.
-                </p>
-              </div>
-            </div>
+        <div class="achievement-card">
+          <h3>Career Highlights</h3>
+          <div class="achievement-list">
+            <div class="achievement-item"><span>🏆</span><p>Delivered digital transformation projects across healthcare, fintech, utilities, transportation, retail, and nonprofit industries.</p></div>
+            <div class="achievement-item"><span>👥</span><p>Coordinated cross-functional teams consisting of developers, designers, QA engineers, vendors, and business stakeholders.</p></div>
+            <div class="achievement-item"><span>✅</span><p>Led Manual QA and User Acceptance Testing activities for multiple production systems.</p></div>
+            <div class="achievement-item"><span>📈</span><p>Managed client communication throughout the full Software Development Lifecycle.</p></div>
           </div>
         </div>
       </section>
 
       <section id="projects" class="section projects-section">
-  <div class="section-heading">
-    <p class="section-subtitle">30-Day Coding Challenge</p>
-    <h2>Projects</h2>
-
-    <p class="journey-description">
-      A personal challenge to design and develop one complete application
-      every day. Some projects solve practical problems, while others recreate
-      nostalgic games or explore new technologies.
-    </p>
-  </div>
-
-  <div class="project-neon-grid">
-    <article class="neon-project-card neon-blue" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 01</span>
-
-          <div>
-            <h3>Image Converter</h3>
-            <p>Image format converter with batch uploads and ZIP downloads.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
-        </div>
-
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 01</span>
-
-          <h3>Image Converter</h3>
-
-          <p>
-            A fast and user-friendly image converter that allows users to upload 
-            and convert multiple images into different file formats while preserving their original quality and resolution.
-            Instant image previews, individual file removal, and automatic downloads single images download directly.
+        <div class="section-heading">
+          <p class="section-subtitle">30-Day Coding Challenge</p>
+          <h2>Projects</h2>
+          <p class="journey-description">
+            A personal challenge to design and develop complete applications.
+            Some projects solve practical problems, while others recreate nostalgic
+            games or explore new technologies.
           </p>
-
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-
-          <div class="project-buttons">
-            <a
-              href="https://bdisccc.github.io/30-day-Challenge-day-1/"
-              class="demo-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-
-            <button type="button" class="flip-back-btn">Back</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="neon-project-card neon-orange" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 02</span>
-
-          <div>
-            <h3>Kanban Board</h3>
-            <p>Kanban board powered by Google Sheets.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
         </div>
 
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 02</span>
+        <div class="project-neon-grid">
+          <article class="neon-project-card neon-blue" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 01</span>
+                <div><h3>Image Converter</h3><p>Image format converter with batch uploads and ZIP downloads.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 01</span>
+                <h3>Image Converter</h3>
+                <p>A fast image converter that allows users to upload and convert multiple images into different formats while preserving quality and resolution, with previews, file removal, and direct downloads.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-1/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          <h3>Kanban Board</h3>
+          <article class="neon-project-card neon-orange" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 02</span>
+                <div><h3>Kanban Board</h3><p>Kanban board powered by Google Sheets.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 02</span>
+                <h3>Kanban Board</h3>
+                <p>A project board for managing tasks across workflow stages, with Google Sheets as a lightweight database, multi-project tabs, editable columns, draggable task cards, and support for links and media.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets</span><span>Apps Script</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-2/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          <p>
-            Organize projects, manage tasks, and track progress across different workflow stages. 
-            What makes it unique is its Google Sheets integration, allowing each project to use its own sheet as a simple database, 
-            along with multi-project tabs, editable columns, draggable task cards, and support for links, images, and videos.
+          <article class="neon-project-card neon-purple" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 03</span>
+                <div><h3>Hangman Game</h3><p>Category-based word guessing game.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 03</span>
+                <h3>Hangman Game</h3>
+                <p>A responsive Hangman game with multiple categories, difficulty options, multi-word support, keyboard controls, and an animated custom character experience.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-3/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          </p>
+          <article class="neon-project-card neon-pink" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 04</span>
+                <div><h3>Multiplayer Bingo</h3><p>Real-time multiplayer bingo game.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 04</span>
+                <h3>Multiplayer Bingo</h3>
+                <p>A room-based Bingo game where hosts can draw numbers, choose winning patterns, manage players, approve card limits, and run manual or automatic marking gameplay.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets</span><span>Apps Script</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-4/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          <div class="project-tech">
-            <span>JavaScript</span>
-            <span>Google Sheets</span>
-            <span>Apps Script</span>
-          </div>
+          <article class="neon-project-card neon-green" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 05</span>
+                <div><h3>Personal Portfolio Website</h3><p>Responsive portfolio website showcasing my experience and projects.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 05</span>
+                <h3>Personal Portfolio Website</h3>
+                <p>A portfolio website with smooth scrolling, responsive layouts, animated role typing, expandable career sections, project cards, mobile navigation, a contact form, and private Google Sheets view tracking.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets</span><span>Apps Script</span></div>
+                <div class="project-buttons"><a href="#home" class="demo-btn">You're Here 🚀</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          <div class="project-buttons">
-            <a
-              href="https://bdisccc.github.io/30-day-Challenge-day-2/"
-              class="demo-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
+          <article class="neon-project-card neon-cyan" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 06</span>
+                <div><h3>Project Coordinator Dashboard</h3><p>Dashboard for projects, meetings, tasks, reminders, and budgets.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 06</span>
+                <h3>Project Coordinator Dashboard</h3>
+                <p>A coordination dashboard that brings project summaries, meeting overviews, task tracking, reminders, RAID logs, action logs, notification management, and budget monitoring into one workspace.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets</span><span>Apps Script</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-6/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-            <button type="button" class="flip-back-btn">Back</button>
-          </div>
-        </div>
-      </div>
-    </article>
+          <article class="neon-project-card neon-gold" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 07</span>
+                <div><h3>Jeopardy Game</h3><p>Custom Jeopardy-style quiz game with host controls.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 07</span>
+                <h3>Jeopardy Game</h3>
+                <p>A custom quiz grid where hosts can control the board, reveal questions, track scores, and manage answers across categories and point values.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets</span><span>Apps Script</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-7/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-    <article class="neon-project-card neon-purple" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 03</span>
+          <article class="neon-project-card neon-rose" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 08</span>
+                <div><h3>Brand Preview Studio</h3><p>Branding playground for colors, fonts, layouts, and landing page styles.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 08</span>
+                <h3>Brand Preview Studio</h3>
+                <p>A brand preview tool where users can test colors, font pairings, button styles, rounded corners, dark mode, spacing, animations, and uploaded images on a landing page mockup.</p>
+                <div class="project-tech"><span>React</span><span>Vite</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-8/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
 
-          <div>
-            <h3>Hangman Game</h3>
-            <p>Category-based word guessing game.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
-        </div>
-
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 03</span>
-
-          <h3>Hangman Game</h3>
-
-          <p>
-            Hangman game where players guess words from multiple categories and difficulty levels before the character’s body parts disappear.
-             What makes it unique is its animated chibi wizard design, large custom word library, multi-word support, keyboard controls, 
-             and responsive gameplay across desktop and mobile devices.
-          </p>
-
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-
-          <div class="project-buttons">
-            <a
-              href="https://bdisccc.github.io/30-day-Challenge-day-3/"
-              class="demo-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-
-            <button type="button" class="flip-back-btn">Back</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="neon-project-card neon-pink" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 04</span>
-
-          <div>
-            <h3>Multiplayer Bingo</h3>
-            <p>Real-time multiplayer bingo game.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
-        </div>
-
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 04</span>
-
-          <h3>Multiplayer Bingo</h3>
-
-          <p>
-            Create private rooms, choose winning patterns, draw numbers, and manage players, 
-            What makes it unique is its flexible gameplay players can request multiple cards, 
-            hosts can approve card limits, and games can use custom patterns, automatic or manual marking, 
-            and even a Reverse Bingo mode where called numbers eliminate players.
-
-          </p>
-
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Google Sheets</span>
-            <span>Apps Script</span>
-          </div>
-
-          <div class="project-buttons">
-            <a
-              href="https://bdisccc.github.io/30-day-Challenge-day-4/"
-              class="demo-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-
-            <button type="button" class="flip-back-btn">Back</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="neon-project-card neon-green" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 05</span>
-
-          <div>
-            <h3>Personal Portfolio Website</h3>
-            <p>Responsive portfolio website showcasing my experience and projects.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
-        </div>
-
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 05</span>
-
-          <h3>Personal Portfolio Website</h3>
-
-          <p>
-            Designed and developed a modern portfolio website with smooth
-            scrolling, responsive layouts, animated role typing, expandable
-            career timeline, interactive project showcase, mobile navigation,
-            contact form, and private Google Sheets view tracking.
-          </p>
-
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Google Sheets</span>
-            <span>Apps Script</span>
-          </div>
-
-          <div class="project-buttons">
-            <a href="#home" class="demo-btn">You're Here 🚀</a>
-
-            <button type="button" class="flip-back-btn">Back</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="neon-project-card neon-cyan" tabindex="0">
-      <div class="neon-card-inner">
-        <div class="neon-card-face neon-card-front">
-          <span class="day-badge">DAY 06</span>
-
-          <div>
-            <h3>Project Coordinator Dashboard</h3>
-            <p>Centralized dashboard for projects, meetings, tasks, and budgets.</p>
-          </div>
-
-          <button type="button" class="learn-more-btn">
-            Learn more <span>→</span>
-          </button>
+          <article class="neon-project-card neon-red" tabindex="0">
+            <div class="neon-card-inner">
+              <div class="neon-card-face neon-card-front">
+                <span class="day-badge">DAY 09</span>
+                <div><h3>Guess the What</h3><p>Custom guessing game for people, objects, characters, or any category.</p></div>
+                <button type="button" class="learn-more-btn">Learn more <span>→</span></button>
+              </div>
+              <div class="neon-card-face neon-card-back">
+                <span class="day-badge">DAY 09</span>
+                <h3>Guess the What</h3>
+                <p>A flexible guessing game inspired by classic Guess Who mechanics, expanded so users can play with standard boards or upload custom images for their own category.</p>
+                <div class="project-tech"><span>React</span><span>Vite</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
+                <div class="project-buttons"><a href="https://bdisccc.github.io/30-day-Challenge-day-9/" class="demo-btn" target="_blank" rel="noopener noreferrer">Live Demo</a><button type="button" class="flip-back-btn">Back</button></div>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <div class="neon-card-face neon-card-back">
-          <span class="day-badge">DAY 06</span>
-
-          <h3>Dashboard</h3>
-
-          <p>
-            Developed a responsive project coordination dashboard that brings
-            project summaries, meeting overviews, task tracking, reminders,
-            RAID logs, action logs, notification management, and budget
-            monitoring into one workspace using Google Sheets as the data source.
-          </p>
-
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Google Sheets</span>
-            <span>Apps Script</span>
+        <div class="nda-projects">
+          <div class="subsection-heading">
+            <p class="section-subtitle">Professional Projects</p>
+            <h3>NDA-safe work I have handled</h3>
           </div>
 
-          <div class="project-buttons">
-            <a
-              href="https://bdisccc.github.io/bdisccc-30-day-Challenge-day-8/"
-              class="demo-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            Live Demo
-            </a>
+          <div class="nda-project-grid">
+            <article class="nda-project-card">
+              <span>Project Coordinator</span>
+              <h3>Enterprise Implementation Support</h3>
+              <p>Coordinated timelines, vendor alignment, stakeholder meetings, action tracking, and delivery reporting for an enterprise software implementation.</p>
+              <ul><li>Timeline tracking</li><li>RAID logs</li><li>Stakeholder coordination</li><li>Status reporting</li></ul>
+            </article>
 
-            <button type="button" class="flip-back-btn">Back</button>
+            <article class="nda-project-card">
+              <span>Business Analyst</span>
+              <h3>ISO-Aligned Process Improvement</h3>
+              <p>Supported documentation standardization, process improvement, and operational tracking for a utilities organization.</p>
+              <ul><li>Requirements gathering</li><li>Process documentation</li><li>Tracking improvements</li><li>Knowledge transfer</li></ul>
+            </article>
+
+            <article class="nda-project-card">
+              <span>Project Manager</span>
+              <h3>Website and E-commerce Delivery</h3>
+              <p>Managed website, CMS, and e-commerce delivery across several industries, from planning to QA and launch preparation.</p>
+              <ul><li>Project planning</li><li>Client communication</li><li>QA coordination</li><li>Launch support</li></ul>
+            </article>
+
+            <article class="nda-project-card">
+              <span>PM / BA</span>
+              <h3>Digital Platform and Product Work</h3>
+              <p>Handled delivery coordination and business analysis support for platform-focused work across fintech, transportation, retail, manufacturing, and nonprofit contexts.</p>
+              <ul><li>Scope alignment</li><li>Sprint coordination</li><li>UAT support</li><li>Change management</li></ul>
+            </article>
           </div>
         </div>
-      </div>
-    </article>
-
-    <article class="neon-project-card neon-gold" tabindex="0">
-  <div class="neon-card-inner">
-    <div class="neon-card-face neon-card-front">
-      <span class="day-badge">DAY 07</span>
-
-      <div>
-        <h3>Jeopardy Game</h3>
-        <p>Custom Jeopardy-style quiz game with host controls and player interaction.</p>
-      </div>
-
-      <button type="button" class="learn-more-btn">
-        Learn more <span>→</span>
-      </button>
-    </div>
-
-    <div class="neon-card-face neon-card-back">
-      <span class="day-badge">DAY 07</span>
-
-      <h3>Jeopardy Game</h3>
-
-      <p>
-        Developed a custom Jeopardy-style quiz game where a host can control
-        the board, reveal questions, track scores, and manage correct or wrong
-        answers. The game supports multiple categories, point-based questions,
-        player interaction, and a synchronized host/player experience using
-        Google Sheets and Google Apps Script.
-      </p>
-
-      <div class="project-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Google Sheets</span>
-        <span>Apps Script</span>
-        <span>Game Logic</span>
-      </div>
-
-      <div class="project-buttons">
-        <a
-          href="https://bdisccc.github.io/30-day-Challenge-day-7/"
-          class="demo-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Live Demo
-        </a>
-
-        <button type="button" class="flip-back-btn">Back</button>
-      </div>
-    </div>
-  </div>
-</article>
-
-<article class="neon-project-card neon-rose" tabindex="0">
-  <div class="neon-card-inner">
-    <div class="neon-card-face neon-card-front">
-      <span class="day-badge">DAY 08</span>
-
-      <div>
-        <h3>Brand Preview Studio</h3>
-        <p>A branding playground for testing colors, fonts, layouts, images, and landing page styles.</p>
-      </div>
-
-      <button type="button" class="learn-more-btn">
-        Learn more <span>→</span>
-      </button>
-    </div>
-
-    <div class="neon-card-face neon-card-back">
-      <span class="day-badge">DAY 08</span>
-
-      <h3>Brand Preview Studio</h3>
-
-      <p>
-        Developed a brand preview tool where users can experiment with brand
-        colors, font pairings, button styles, rounded corners, dark mode,
-        layout spacing, animations, and uploaded images. It helps users quickly
-        see how a brand identity could look on a landing page before applying it
-        to a real website.
-      </p>
-
-      <div class="project-tech">
-        <span>React</span>
-        <span>Vite</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Branding</span>
-        <span>UI Preview</span>
-      </div>
-
-      <div class="project-buttons">
-        <a
-          href="https://bdisccc.github.io/30-day-Challenge-day-8/"
-          class="demo-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Live Demo
-        </a>
-
-        <button type="button" class="flip-back-btn">Back</button>
-      </div>
-    </div>
-  </div>
-</article>
-
-<article class="neon-project-card neon-red" tabindex="0">
-  <div class="neon-card-inner">
-    <div class="neon-card-face neon-card-front">
-      <span class="day-badge">DAY 09</span>
-
-      <div>
-        <h3>Guess the What</h3>
-        <p>A customizable guessing game for people, objects, characters, or any chosen category.</p>
-      </div>
-
-      <button type="button" class="learn-more-btn">
-        Learn more <span>→</span>
-      </button>
-    </div>
-
-    <div class="neon-card-face neon-card-back">
-      <span class="day-badge">DAY 09</span>
-
-      <h3>Guess the What</h3>
-
-      <p>
-        Developed a flexible guessing game inspired by classic Guess Who
-        mechanics, but expanded so users can play with any category. Players can
-        choose a standard board or create a custom one by uploading images and
-        defining their own guessing set, making it useful for party games,
-        characters, objects, themes, and personalized categories.
-      </p>
-
-      <div class="project-tech">
-        <span>React</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Custom Uploads</span>
-        <span>Game Logic</span>
-        <span>Responsive Design</span>
-      </div>
-
-      <div class="project-buttons">
-        <a
-          href="https://bdisccc.github.io/30-day-Challenge-day-9/"
-          class="demo-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Live Demo
-        </a>
-
-        <button type="button" class="flip-back-btn">Back</button>
-      </div>
-    </div>
-  </div>
-</article>
-
-  </div>
-</section>
+      </section>
 
       <section id="contact" class="section contact-section">
         <div class="section-heading">
           <p class="section-subtitle">Get In Touch</p>
           <h2>Contact Me</h2>
-
           <p class="journey-description">
             Interested in working together or have a project in mind? Send me a
             message and I’ll get back to you.
@@ -784,50 +650,28 @@
         <div class="contact-layout">
           <div class="contact-info">
             <h3>Let's connect</h3>
-
-            <p>
-              I’m open to project management, business analysis, project
-              coordination, and junior web development opportunities.
-            </p>
+            <p>I’m open to project management, business analysis, project coordination, junior web development, and AI automation opportunities.</p>
 
             <div class="contact-links">
               <a href="mailto:bonsuarez.discaya@gmail.com" class="email-card">
                 <i class="hgi hgi-stroke hgi-rounded hgi-mail-01"></i>
-
                 <div>
                   <strong>Email</strong>
                   <span id="emailAddress">bonsuarez.discaya</span>
                 </div>
-
-                <button
-                  type="button"
-                  class="copy-email-btn"
-                  aria-label="Copy email"
-                  title="Copy email"
-                >
+                <button type="button" class="copy-email-btn" aria-label="Copy email" title="Copy email">
                   <i class="hgi hgi-stroke hgi-rounded hgi-copy-01"></i>
                 </button>
               </a>
 
-              <a href="https://github.com/bdisccc" target="_blank">
+              <a href="https://github.com/bdisccc" target="_blank" rel="noopener noreferrer">
                 <i class="hgi hgi-stroke hgi-rounded hgi-github"></i>
-
-                <div>
-                  <strong>GitHub</strong>
-                  <span>bdisccc</span>
-                </div>
+                <div><strong>GitHub</strong><span>bdisccc</span></div>
               </a>
 
-              <a
-                href="https://www.linkedin.com/in/bon-s-93529b141/"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/bon-s-93529b141/" target="_blank" rel="noopener noreferrer">
                 <i class="hgi hgi-stroke hgi-rounded hgi-linkedin-01"></i>
-
-                <div>
-                  <strong>LinkedIn</strong>
-                  <span>Bon SD</span>
-                </div>
+                <div><strong>LinkedIn</strong><span>Bon SD</span></div>
               </a>
             </div>
           </div>
@@ -840,21 +684,12 @@
 
             <div class="form-group">
               <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-              />
+              <input type="email" name="email" placeholder="your@email.com" required />
             </div>
 
             <div class="form-group">
               <label>Message</label>
-              <textarea
-                name="message"
-                placeholder="Write your message..."
-                required
-              ></textarea>
+              <textarea name="message" placeholder="Write your message..." required></textarea>
             </div>
 
             <button type="submit" class="submit-btn">Send Message</button>
@@ -868,26 +703,11 @@
       <p>© 2026 bonsd</p>
     </footer>
 
-    <nav class="mobile-nav">
-      <a href="#home" class="mobile-link active">
-        <i class="hgi hgi-stroke hgi-rounded hgi-home-03"></i>
-        <span>Home</span>
-      </a>
-
-      <a href="#skills" class="mobile-link">
-        <i class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01"></i>
-        <span>Journey</span>
-      </a>
-
-      <a href="#projects" class="mobile-link">
-        <i class="hgi hgi-stroke hgi-rounded hgi-laptop-phone-sync"></i>
-        <span>Projects</span>
-      </a>
-
-      <a href="#contact" class="mobile-link">
-        <i class="hgi hgi-stroke hgi-rounded hgi-mail-01"></i>
-        <span>Contact</span>
-      </a>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#home" class="mobile-link active"><i class="hgi hgi-stroke hgi-rounded hgi-home-03"></i><span>Home</span></a>
+      <a href="#skills" class="mobile-link"><i class="hgi hgi-stroke hgi-rounded hgi-airplane-take-off-01"></i><span>Journey</span></a>
+      <a href="#projects" class="mobile-link"><i class="hgi hgi-stroke hgi-rounded hgi-laptop-phone-sync"></i><span>Projects</span></a>
+      <a href="#contact" class="mobile-link"><i class="hgi hgi-stroke hgi-rounded hgi-mail-01"></i><span>Contact</span></a>
     </nav>
 
     <script src="script.js"></script>
