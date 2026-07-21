@@ -1623,8 +1623,15 @@ footer {
   pointer-events: auto;
 }
 
+.neon-gold {
+  --neon: #facc15;
+}
+
+.neon-rose {
+  --neon: #fb7185;
+}
+
 .neon-red {
   --neon: #ef4444;
 }
-
 
