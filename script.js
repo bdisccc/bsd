@@ -18,7 +18,7 @@ function typeRoles() {
   const currentRole = roles[roleIndex];
 
   if (!isDeleting) {
-    charIndex += 1;
+    charIndex = Math.min(charIndex + 1, currentRole.length);
     typingRole.textContent = currentRole.substring(0, charIndex);
 
     if (charIndex === currentRole.length) {
@@ -27,7 +27,7 @@ function typeRoles() {
       return;
     }
   } else {
-    charIndex -= 1;
+    charIndex = Math.max(charIndex - 1, 0);
     typingRole.textContent = currentRole.substring(0, charIndex);
 
     if (charIndex === 0) {
@@ -280,3 +280,100 @@ document.addEventListener("click", () => {
     skill.classList.remove("show-label");
   });
 });
+
+/* ===========================
+   Desktop Glitter Cursor
+=========================== */
+
+const customCursor = document.querySelector(".custom-cursor");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 769px)");
+
+if (customCursor && finePointer.matches) {
+  document.body.classList.add("has-custom-cursor");
+
+  const cursorColors = [
+    { color: "#d96b6b", glow: "rgba(217, 107, 107, 0.42)" },
+    { color: "#a855f7", glow: "rgba(168, 85, 247, 0.44)" },
+    { color: "#22d3ee", glow: "rgba(34, 211, 238, 0.42)" },
+    { color: "#facc15", glow: "rgba(250, 204, 21, 0.4)" },
+    { color: "#fb7185", glow: "rgba(251, 113, 133, 0.42)" },
+    { color: "#4ade80", glow: "rgba(74, 222, 128, 0.4)" }
+  ];
+
+  let cursorX = -100;
+  let cursorY = -100;
+  let colorIndex = 0;
+  let lastGlitterAt = 0;
+
+  function applyCursorColor() {
+    const palette = cursorColors[colorIndex];
+    document.documentElement.style.setProperty("--cursor-color", palette.color);
+    document.documentElement.style.setProperty("--cursor-glow", palette.glow);
+  }
+
+  function positionCursor() {
+    customCursor.style.transform = `translate3d(${cursorX - 17}px, ${cursorY - 17}px, 0)`;
+    requestAnimationFrame(positionCursor);
+  }
+
+  function createGlitter(x, y, burst = false) {
+    const particle = document.createElement("span");
+    const starParticle = Math.random() > 0.58;
+
+    particle.className = starParticle ? "cursor-glitter is-star" : "cursor-glitter";
+    if (starParticle) particle.textContent = Math.random() > 0.5 ? "✦" : "✧";
+
+    const distance = burst ? 34 + Math.random() * 28 : 10 + Math.random() * 16;
+    const angle = Math.random() * Math.PI * 2;
+    const xOffset = Math.cos(angle) * distance;
+    const yOffset = Math.sin(angle) * distance;
+    const size = starParticle ? 7 + Math.random() * 6 : 4 + Math.random() * 4;
+
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.setProperty("--glitter-x", `${xOffset}px`);
+    particle.style.setProperty("--glitter-y", `${yOffset}px`);
+    particle.style.setProperty("--particle-size", `${size}px`);
+
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 760);
+  }
+
+  window.addEventListener("mousemove", (event) => {
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    customCursor.classList.add("is-visible");
+
+    const now = performance.now();
+    if (now - lastGlitterAt > 45) {
+      createGlitter(cursorX, cursorY);
+      lastGlitterAt = now;
+    }
+  });
+
+  document.documentElement.addEventListener("mouseleave", () => {
+    customCursor.classList.remove("is-visible");
+  });
+
+  document.documentElement.addEventListener("mouseenter", () => {
+    customCursor.classList.add("is-visible");
+  });
+
+  window.addEventListener("mousedown", () => {
+    colorIndex = (colorIndex + 1) % cursorColors.length;
+    applyCursorColor();
+    customCursor.classList.add("is-clicking");
+
+    for (let i = 0; i < 9; i += 1) {
+      createGlitter(cursorX, cursorY, true);
+    }
+  });
+
+  window.addEventListener("mouseup", () => {
+    customCursor.classList.remove("is-clicking");
+  });
+
+  applyCursorColor();
+  positionCursor();
+}
+
